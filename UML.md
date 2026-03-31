@@ -6,9 +6,9 @@ classDiagram
         - Board board
         - Dice dice
         - GameStrategy strategy
-        - Queue<Player> turnQueue
-        - List<Player> winners
-        + Game(int size, List<Player> players, String strategy)
+        - Queue turnQueue
+        - List winners
+        + Game(int size, List players, String strategy)
         + start()
         - playTurn(Player player)
         - movePlayer(Player player, int roll)
@@ -17,8 +17,8 @@ classDiagram
 
     class Board {
         - int size
-        - Map<Integer, Integer> snakes
-        - Map<Integer, Integer> ladders
+        - Map snakes
+        - Map ladders
         + Board(int size)
         + getNextPosition(int pos): int
         + getEnd(): int
@@ -69,6 +69,5 @@ classDiagram
     GameStrategyFactory ..> GameStrategy : creates
     EasyMode --|> GameStrategy
     HardMode --|> GameStrategy
-    Board --> Map : contains
-    Board --> "snakes/ladders" : Map<Integer, Integer>
+    Board --> snakes : contains
 ```
