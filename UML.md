@@ -43,13 +43,7 @@ classDiagram
         + getGameStrategy(String mode): GameStrategy
     }
 
-    class Ladder {
-    }
-
-    class Snake {
-    }
-
-    interface GameStrategy {
+    class GameStrategy {
         + isMoveAllowed(int roll, int totalRolls): boolean
     }
 
@@ -70,4 +64,5 @@ classDiagram
     EasyMode --|> GameStrategy
     HardMode --|> GameStrategy
     Board --> snakes : contains
+    Board --> ladders : contains
 ```
